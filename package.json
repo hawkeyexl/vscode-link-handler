@@ -1,0 +1,47 @@
+{
+    "name": "vscode-deep-link-handler",
+    "displayName": "VS Code Deep Link Handler",
+    "description": "Handle deep links to clone repositories, switch branches, and navigate to specific files and lines",
+    "version": "0.1.0",
+    "engines": {
+      "vscode": "^1.80.0"
+    },
+    "categories": [
+      "Other"
+    ],
+    "activationEvents": [
+      "onUri"
+    ],
+    "main": "./out/extension.js",
+    "contributes": {
+      "commands": [
+        {
+          "command": "vscode-deep-link-handler.handleUri",
+          "title": "Handle Deep Link URI"
+        }
+      ]
+    },
+    "scripts": {
+      "vscode:prepublish": "npm run compile",
+      "compile": "tsc -p ./",
+      "lint": "eslint src --ext ts",
+      "watch": "tsc -watch -p ./",
+      "pretest": "npm run compile && npm run lint",
+      "test": "node ./out/test/runTest.js"
+    },
+    "dependencies": {
+      "zod": "^3.24.2"
+    },
+    "devDependencies": {
+      "@types/glob": "^8.1.0",
+      "@types/mocha": "^10.0.10",
+      "@types/node": "22.14.0",
+      "@types/vscode": "^1.98.0",
+      "@typescript-eslint/eslint-plugin": "^8.29.0",
+      "@typescript-eslint/parser": "^8.29.0",
+      "eslint": "^9.23.0",
+      "glob": "^11.0.1",
+      "mocha": "^11.1.0",
+      "typescript": "^5.8.2"
+    }
+  }
